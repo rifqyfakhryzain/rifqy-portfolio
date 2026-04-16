@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio | Backend Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .glass {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .bento-card {
+        transition: all 0.3s ease;
+      }
+      .bento-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(16, 185, 129, 0.4);
+      }
+    </style>
+  </head>
+  <body class="bg-[#0f1115] text-slate-200 overflow-x-hidden">
+    <div class="fixed top-0 left-0 w-full h-full -z-10">
+      <div
+        class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-emerald-500/10 blur-[120px]"
+      ></div>
+      <div
+        class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-indigo-500/10 blur-[120px]"
+      ></div>
+    </div>
+
+    <nav class="fixed top-0 w-full z-[100] px-6 py-4">
+      <div
+        class="max-w-6xl mx-auto flex justify-between items-center glass py-3 px-6 rounded-full relative"
+      >
+        <div class="text-xl font-extrabold tracking-tighter text-emerald-400">
+          My Portopolio
+        </div>
+
+        <div class="hidden md:flex gap-8 text-sm font-medium">
+          <a href="#home" class="hover:text-emerald-400 transition">Beranda</a>
+          <a href="#work" class="hover:text-emerald-400 transition">Proyek</a>
+          <a href="#about" class="hover:text-emerald-400 transition">Tentang</a>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <a
+            href="mailto:rifqyfz678@gmail.com"
+            class="hidden sm:block bg-emerald-500 hover:bg-emerald-600 text-black px-5 py-2 rounded-full text-sm font-bold transition"
+            >Kontak</a
+          >
+
+          <button
+            id="menu-btn"
+            class="md:hidden text-emerald-400 focus:outline-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div
+          id="mobile-menu"
+          class="absolute top-20 left-0 w-full bg-[#161920] border border-white/10 rounded-3xl p-6 flex flex-col gap-6 text-center opacity-0 pointer-events-none transition-all duration-300 transform -translate-y-5 md:hidden shadow-2xl"
+        >
+          <a
+            href="#home"
+            class="text-lg font-bold text-white hover:text-emerald-400"
+            >Beranda</a
+          >
+          <a
+            href="#work"
+            class="text-lg font-bold text-white hover:text-emerald-400"
+            >Proyek</a
+          >
+          <a
+            href="#about"
+            class="text-lg font-bold text-white hover:text-emerald-400"
+            >Tentang</a
+          >
+          <hr class="border-white/5" />
+          <a
+            href="mailto:email@kamu.com"
+            class="bg-emerald-500 text-black py-3 rounded-2xl font-bold active:scale-95 transition-transform"
+            >Kontak Saya</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <section id="home" class="pt-32 pb-20 px-6">
+      <div class="max-w-6xl mx-auto text-center">
+        <div
+          class="inline-block px-4 py-1.5 mb-6 glass rounded-full border border-emerald-500/30"
+        >
+          <span
+            class="text-xs font-bold tracking-widest uppercase text-emerald-400 italic"
+            >Open for New Opportunities</span
+          >
+        </div>
+
+        <h1
+          class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-[1.1]"
+        >
+          Halo, Saya
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-indigo-500"
+            >Rifqy Fakhry Zain</span
+          >.
+        </h1>
+
+        <p
+          class="text-slate-400 max-w-2xl mx-auto text-lg md:text-xl mb-12 leading-relaxed"
+        >
+          Seorang
+          <span class="text-white font-semibold">Backend Developer</span> yang
+          fokus pada efisiensi sistem server, pengembangan
+          <span class="text-emerald-400 font-bold">API Service</span>, dan
+          implementasi teknologi
+        </p>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a
+            href="#about-me"
+            class="bg-emerald-500 text-black px-8 py-4 rounded-2xl font-bold hover:bg-emerald-600 transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.3)]"
+            >Profil Saya</a
+          >
+          <a
+            href="https://github.com/rifqyfakhryzain"
+            target="_blank"
+            class="glass px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-2 hover:border-emerald-500/50 transition-all"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.298 24 12c0-6.627-5.373-12-12-12"
+              />
+            </svg>
+            GitHub Profile
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about-me" class="px-6 py-16">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+          <div class="md:col-span-5 relative group">
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-indigo-600 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"
+            ></div>
+            <div
+              class="relative bg-[#161920] rounded-[2.5rem] overflow-hidden border border-white/10 aspect-[4/5]"
+            >
+              <img
+                src="URL_FOTO_RIFQY.jpg"
+                alt="Rifqy Fakhry Zain"
+                class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500"
+              />
+            </div>
+          </div>
+
+          <div class="md:col-span-7">
+            <h3 class="text-4xl font-bold text-white mb-6 leading-tight">
+              Backend <span class="text-indigo-400 italic">Developer</span>.
+            </h3>
+
+            <div
+              class="space-y-4 text-slate-400 text-lg leading-relaxed text-justify"
+            >
+              <p>
+                Saya
+                <span
+                  class="text-white font-medium underline decoration-emerald-500/50 underline-offset-4"
+                  >Rifqy Fakhry Zain</span
+                >, seorang pengembang perangkat lunak yang berfokus pada
+                efisiensi sisi server. Saya berdedikasi untuk membangun fondasi
+                aplikasi yang kuat, aman, dan mudah dikelola.
+              </p>
+              <p>
+                Dengan spesialisasi utama pada ekosistem
+                <span class="text-emerald-400 font-bold">Laravel</span>, saya
+                memiliki pengalaman dalam merancang arsitektur database MySQL
+                yang optimal dan membangun
+                <span class="text-white font-semibold">RESTful API</span> yang
+                reliabel. Saya percaya bahwa kode yang bersih adalah investasi
+                jangka panjang bagi sebuah sistem.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
+              <div
+                class="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-emerald-500/30 transition group"
+              >
+                <h4
+                  class="text-emerald-400 font-bold mb-1 uppercase text-xs tracking-widest group-hover:text-white transition"
+                >
+                  Lokasi
+                </h4>
+                <p class="text-slate-200 text-sm">Bandung, Jawa Barat</p>
+              </div>
+              <div
+                class="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-emerald-500/30 transition group"
+              >
+                <h4
+                  class="text-emerald-400 font-bold mb-1 uppercase text-xs tracking-widest group-hover:text-white transition"
+                >
+                  Latar Belakang
+                </h4>
+                <p class="text-slate-200 text-sm">Teknik Informatika</p>
+                <p class="text-slate-200 text-sm">
+                  Universitas Komputer Indonesia (UNIKOM)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="px-6 py-10">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div
+          class="md:col-span-2 glass p-8 rounded-[2rem] bento-card flex flex-col justify-end min-h-[300px]"
+        >
+          <span class="text-emerald-400 font-mono mb-2">// Core Focus</span>
+          <h2 class="text-3xl font-bold mb-4 text-white">
+            Spesialis Backend dengan fokus pada arsitektur API.
+          </h2>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Berpengalaman membangun sistem server-side yang terstruktur
+            menggunakan Laravel, mengoptimalkan query database, dan
+            mengintegrasikan layanan pihak ketiga.
+          </p>
+        </div>
+
+        <div
+          class="glass p-8 rounded-[2rem] bento-card flex flex-col items-center justify-center"
+        >
+          <div class="grid grid-cols-2 gap-3 text-center w-full">
+            <div
+              class="p-2 bg-white/5 rounded-xl border border-white/10 text-xs font-bold text-emerald-400"
+            >
+              PHP
+            </div>
+            <div
+              class="p-2 bg-white/5 rounded-xl border border-white/10 text-xs font-bold text-emerald-400"
+            >
+              Laravel
+            </div>
+            <div
+              class="p-2 bg-white/5 rounded-xl border border-white/10 text-xs font-bold text-indigo-400"
+            >
+              MySQL
+            </div>
+            <div
+              class="p-2 bg-white/5 rounded-xl border border-white/10 text-xs font-bold text-indigo-400"
+            >
+              REST API
+            </div>
+          </div>
+          <p class="mt-6 font-semibold text-sm tracking-widest uppercase">
+            Tech Stack
+          </p>
+        </div>
+
+        <div
+          class="glass p-8 rounded-[2rem] bento-card flex flex-col justify-between"
+        >
+          <div
+            class="w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center"
+          >
+            <div class="w-3 h-3 bg-emerald-500 rounded-full animate-ping"></div>
+          </div>
+          <div>
+            <p class="text-slate-400 text-xs uppercase tracking-widest">
+              Status Saat Ini
+            </p>
+            <p class="text-lg font-bold text-white leading-tight">
+              Terbuka untuk peluang Magang & Kerja.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="glass p-8 rounded-[2rem] bento-card flex flex-col justify-center gap-4"
+        >
+          <div class="flex justify-between items-end">
+            <div>
+              <p class="text-3xl font-black text-emerald-400">05+</p>
+              <p class="text-[10px] text-slate-400 uppercase">Proyek Backend</p>
+            </div>
+            <div class="text-right">
+              <p class="text-3xl font-black text-indigo-400">2024</p>
+              <p class="text-[10px] text-slate-400 uppercase">Sejak Aktif</p>
+            </div>
+          </div>
+          <div class="w-full bg-white/5 h-1 rounded-full overflow-hidden">
+            <div class="bg-emerald-500 h-full w-[85%]"></div>
+          </div>
+        </div>
+
+        <div
+          class="md:col-span-3 glass p-8 rounded-[2rem] bento-card flex justify-between items-center group cursor-pointer"
+        >
+          <div>
+            <h3 class="text-xl md:text-2xl font-bold mb-1">
+              Eksplorasi Repositori Kode
+            </h3>
+            <p class="text-slate-400 text-sm">
+              Lihat implementasi Laravel dan struktur API saya di GitHub.
+            </p>
+          </div>
+          <a
+            href="https://github.com/rifqyfakhryzain"
+            target="_blank"
+            class="w-14 h-14 bg-white text-black rounded-full flex items-center justify-center group-hover:rotate-45 transition-all shadow-xl shadow-white/10"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <div
+          class="glass p-8 rounded-[2rem] bento-card flex items-center justify-center"
+        >
+          <span class="text-slate-500 font-mono text-xs"
+            >Postman / Git / MySQL Workbench</span
+          >
+        </div>
+      </div>
+    </section>
+
+
+
+    <footer class="py-10 border-t border-white/5 text-center">
+      <p class="text-slate-500 text-xs tracking-widest uppercase mb-2">
+        &copy; 2026 Rifqy Fakhry Zain
+      </p>
+    </footer>
+
+    <script>
+      window.addEventListener("scroll", function () {
+        const nav = document.querySelector("nav div");
+        if (window.scrollY > 50) {
+          nav.classList.add("bg-black/60");
+        } else {
+          nav.classList.remove("bg-black/60");
+        }
+      });
+
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuBtn.addEventListener("click", () => {
+        // Toggle class untuk animasi
+        mobileMenu.classList.toggle("opacity-0");
+        mobileMenu.classList.toggle("pointer-events-none");
+        mobileMenu.classList.toggle("-translate-y-5");
+        mobileMenu.classList.toggle("translate-y-0");
+      });
+
+      // Tutup menu otomatis saat link diklik
+      document.querySelectorAll("#mobile-menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add(
+            "opacity-0",
+            "pointer-events-none",
+            "-translate-y-5",
+          );
+          mobileMenu.classList.remove("translate-y-0");
+        });
+      });
+    </script>
+  </body>
+</html>
