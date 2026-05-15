@@ -1,405 +1,540 @@
 <!doctype html>
-<html lang="id" class="scroll-smooth">
+<html lang="id" class="scroll-smooth transition-all duration-500">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Personal Portfolio | Backend Developer</title>
+    <title>Rifqy Fakhry Zain | Backend Engineer</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono&display=swap"
       rel="stylesheet"
     />
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Plus Jakarta Sans", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+          },
+        },
+      };
+
+      // Inisialisasi Tema
+      if (
+        localStorage.getItem("theme") === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+
     <style>
+      /* Menggunakan CSS Variables agar lebih konsisten */
+      :root {
+        --bg-color: #ffffff;
+        --text-color: #000000;
+        --border-color: #000000;
+      }
+
+      .dark {
+        --bg-color: #000000;
+        --text-color: #ffffff;
+        --border-color: #ffffff;
+      }
+
       body {
-        font-family: "Plus Jakarta Sans", sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        transition:
+          background-color 0.5s ease,
+          color 0.5s ease;
       }
-      .glass {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+
+      .card-border {
+        border: 1px solid var(--border-color);
       }
-      .bento-card {
-        transition: all 0.3s ease;
-      }
-      .bento-card:hover {
-        transform: translateY(-5px);
-        border-color: rgba(16, 185, 129, 0.4);
+
+      /* Revisi Navbar agar ikut berubah */
+      .nav-glass {
+        @apply backdrop-blur-md transition-colors duration-500;
+        background-color: rgba(var(--nav-bg), 0.8);
       }
     </style>
   </head>
-  <body class="bg-[#0f1115] text-slate-200 overflow-x-hidden">
-    <div class="fixed top-0 left-0 w-full h-full -z-10">
-      <div
-        class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-emerald-500/10 blur-[120px]"
-      ></div>
-      <div
-        class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-indigo-500/10 blur-[120px]"
-      ></div>
-    </div>
 
-    <nav class="fixed top-0 w-full z-[100] px-6 py-4">
+  <body
+    class="font-sans antialiased bg-white dark:bg-black text-black dark:text-white transition-colors duration-500"
+  >
+    <nav class="fixed top-0 w-full z-50 px-4 py-4 md:px-6 md:py-6">
       <div
-        class="max-w-6xl mx-auto flex justify-between items-center glass py-3 px-6 rounded-full relative"
+        class="max-w-5xl mx-auto flex justify-between items-center bg-white/80 dark:bg-black/90 backdrop-blur-md py-3 px-6 rounded-2xl border border-black dark:border-white transition-all duration-500"
       >
-        <div class="text-xl font-extrabold tracking-tighter text-emerald-400">
+        <div class="font-bold tracking-tighter text-xl uppercase">
           My Portopolio
         </div>
 
-        <div class="hidden md:flex gap-8 text-sm font-medium">
-          <a href="#home" class="hover:text-emerald-400 transition">Beranda</a>
-          <a href="#work" class="hover:text-emerald-400 transition">Proyek</a>
-          <a href="#about" class="hover:text-emerald-400 transition">Tentang</a>
+        <div
+          class="hidden md:flex gap-8 text-sm font-medium uppercase tracking-widest"
+        >
+          <a href="#home" class="hover:opacity-50 transition">Home</a>
+          <a href="#about" class="hover:opacity-50 transition">About</a>
+          <a href="#work" class="hover:opacity-50 transition">Work</a>
         </div>
 
-        <div class="flex items-center gap-4">
-          <a
-            href="mailto:rifqyfz678@gmail.com"
-            class="hidden sm:block bg-emerald-500 hover:bg-emerald-600 text-black px-5 py-2 rounded-full text-sm font-bold transition"
-            >Kontak</a
-          >
-
+        <div class="flex items-center gap-2">
           <button
-            id="menu-btn"
-            class="md:hidden text-emerald-400 focus:outline-none"
+            id="theme-toggle"
+            class="p-2 rounded-xl border border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
           >
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-8 w-8"
+              id="theme-toggle-light-icon"
+              class="hidden w-4 h-4"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+              ></path>
+            </svg>
+            <svg
+              id="theme-toggle-dark-icon"
+              class="hidden w-4 h-4"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              ></path>
+            </svg>
+          </button>
+
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden p-2 rounded-xl border border-black dark:border-white"
+          >
+            <svg
+              class="w-5 h-5"
               fill="none"
-              viewBox="0 0 24 24"
               stroke="currentColor"
+              viewBox="0 0 24 24"
             >
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
                 d="M4 6h16M4 12h16m-7 6h7"
-              />
+              ></path>
             </svg>
           </button>
         </div>
+      </div>
 
-        <div
-          id="mobile-menu"
-          class="absolute top-20 left-0 w-full bg-[#161920] border border-white/10 rounded-3xl p-6 flex flex-col gap-6 text-center opacity-0 pointer-events-none transition-all duration-300 transform -translate-y-5 md:hidden shadow-2xl"
+      <div
+        id="mobile-menu"
+        class="hidden mt-4 flex-col gap-2 p-4 rounded-3xl bg-white/90 dark:bg-zinc-900/90 backdrop-blur-xl border border-black/10 dark:border-white/20 md:hidden overflow-hidden shadow-2xl transition-all duration-500"
+      >
+        <a
+          href="#home"
+          class="group flex justify-between items-center p-4 rounded-2xl hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300"
         >
-          <a
-            href="#home"
-            class="text-lg font-bold text-white hover:text-emerald-400"
-            >Beranda</a
+          <span class="font-bold uppercase tracking-widest text-sm">Home</span>
+          <span class="opacity-0 group-hover:opacity-100 transition-opacity"
+            >→</span
           >
-          <a
-            href="#work"
-            class="text-lg font-bold text-white hover:text-emerald-400"
-            >Proyek</a
+        </a>
+        <a
+          href="#about"
+          class="group flex justify-between items-center p-4 rounded-2xl hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300"
+        >
+          <span class="font-bold uppercase tracking-widest text-sm">About</span>
+          <span class="opacity-0 group-hover:opacity-100 transition-opacity"
+            >→</span
           >
-          <a
-            href="#about"
-            class="text-lg font-bold text-white hover:text-emerald-400"
-            >Tentang</a
+        </a>
+        <a
+          href="#work"
+          class="group flex justify-between items-center p-4 rounded-2xl hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300"
+        >
+          <span class="font-bold uppercase tracking-widest text-sm">Work</span>
+          <span class="opacity-0 group-hover:opacity-100 transition-opacity"
+            >→</span
           >
-          <hr class="border-white/5" />
-          <a
-            href="mailto:email@kamu.com"
-            class="bg-emerald-500 text-black py-3 rounded-2xl font-bold active:scale-95 transition-transform"
-            >Kontak Saya</a
-          >
-        </div>
+        </a>
       </div>
     </nav>
 
-    <section id="home" class="pt-32 pb-20 px-6">
-      <div class="max-w-6xl mx-auto text-center">
-        <div
-          class="inline-block px-4 py-1.5 mb-6 glass rounded-full border border-emerald-500/30"
-        >
+    <section id="home" class="pt-48 pb-20 px-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="relative flex h-3 w-3">
+            <span
+              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"
+            ></span>
+            <span
+              class="relative inline-flex rounded-full h-3 w-3 bg-green-500"
+            ></span>
+          </div>
           <span
-            class="text-xs font-bold tracking-widest uppercase text-emerald-400 italic"
-            >Open for New Opportunities</span
+            class="font-mono text-[10px] uppercase tracking-[0.3em] text-muted"
           >
+            Available for new architecture
+          </span>
         </div>
 
         <h1
-          class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-[1.1]"
+          class="text-6xl md:text-8xl font-extrabold tracking-tighter leading-[0.9] mb-8"
         >
-          Halo, Saya
+          Building Digital <br />
           <span
-            class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-indigo-500"
-            >Rifqy Fakhry Zain</span
-          >.
+            class="bg-gradient-to-r from-zinc-400 via-zinc-500 to-zinc-800 dark:from-zinc-300 dark:via-zinc-500 dark:to-zinc-700 bg-clip-text text-transparent"
+          >
+            Infrastructure.
+          </span>
         </h1>
 
         <p
-          class="text-slate-400 max-w-2xl mx-auto text-lg md:text-xl mb-12 leading-relaxed"
+          class="text-xl md:text-2xl text-muted max-w-3xl leading-relaxed mb-10"
         >
-          Seorang
-          <span class="text-white font-semibold">Backend Developer</span> yang
-          fokus pada efisiensi sistem server, pengembangan
-          <span class="text-emerald-400 font-bold">API Service</span>, dan
-          implementasi teknologi
+          Saya <span class="text-main font-semibold">Rifqy Fakhry Zain</span>,
+          arsitek di balik layar yang mengubah logika kompleks menjadi sistem
+          backend yang <span class="italic text-main">seamless</span>. Spesialis
+          dalam orkestrasi
+          <span class="underline decoration-zinc-400 underline-offset-4"
+            >Laravel</span
+          >
+          dan optimasi performa database.
         </p>
 
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <div class="flex flex-wrap gap-5 items-center">
           <a
-            href="#about-me"
-            class="bg-emerald-500 text-black px-8 py-4 rounded-2xl font-bold hover:bg-emerald-600 transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.3)]"
-            >Profil Saya</a
+            href="#work"
+            class="group flex items-center gap-2 px-8 py-4 rounded-full font-bold card-border hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
           >
-          <a
-            href="https://github.com/rifqyfakhryzain"
-            target="_blank"
-            class="glass px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-2 hover:border-emerald-500/50 transition-all"
-          >
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.298 24 12c0-6.627-5.373-12-12-12"
-              />
-            </svg>
-            GitHub Profile
+            <span>View Projects</span>
           </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="about-me" class="px-6 py-16">
-      <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
-          <div class="md:col-span-5 relative group">
-            <div
-              class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-indigo-600 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"
-            ></div>
-            <div
-              class="relative bg-[#161920] rounded-[2.5rem] overflow-hidden border border-white/10 aspect-[4/5]"
-            >
-              <img
-                src="URL_FOTO_RIFQY.jpg"
-                alt="Rifqy Fakhry Zain"
-                class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500"
-              />
-            </div>
-          </div>
-
-          <div class="md:col-span-7">
-            <h3 class="text-4xl font-bold text-white mb-6 leading-tight">
-              Backend <span class="text-indigo-400 italic">Developer</span>.
-            </h3>
-
-            <div
-              class="space-y-4 text-slate-400 text-lg leading-relaxed text-justify"
-            >
-              <p>
-                Saya
-                <span
-                  class="text-white font-medium underline decoration-emerald-500/50 underline-offset-4"
-                  >Rifqy Fakhry Zain</span
-                >, seorang pengembang perangkat lunak yang berfokus pada
-                efisiensi sisi server. Saya berdedikasi untuk membangun fondasi
-                aplikasi yang kuat, aman, dan mudah dikelola.
-              </p>
-              <p>
-                Dengan spesialisasi utama pada ekosistem
-                <span class="text-emerald-400 font-bold">Laravel</span>, saya
-                memiliki pengalaman dalam merancang arsitektur database MySQL
-                yang optimal dan membangun
-                <span class="text-white font-semibold">RESTful API</span> yang
-                reliabel. Saya percaya bahwa kode yang bersih adalah investasi
-                jangka panjang bagi sebuah sistem.
-              </p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
-              <div
-                class="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-emerald-500/30 transition group"
-              >
-                <h4
-                  class="text-emerald-400 font-bold mb-1 uppercase text-xs tracking-widest group-hover:text-white transition"
-                >
-                  Lokasi
-                </h4>
-                <p class="text-slate-200 text-sm">Bandung, Jawa Barat</p>
-              </div>
-              <div
-                class="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-emerald-500/30 transition group"
-              >
-                <h4
-                  class="text-emerald-400 font-bold mb-1 uppercase text-xs tracking-widest group-hover:text-white transition"
-                >
-                  Latar Belakang
-                </h4>
-                <p class="text-slate-200 text-sm">Teknik Informatika</p>
-                <p class="text-slate-200 text-sm">
-                  Universitas Komputer Indonesia (UNIKOM)
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="px-6 py-10">
-      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4">
-        <div
-          class="md:col-span-2 glass p-8 rounded-[2rem] bento-card flex flex-col justify-end min-h-[300px]"
-        >
-          <span class="text-emerald-400 font-mono mb-2">// Core Focus</span>
-          <h2 class="text-3xl font-bold mb-4 text-white">
-            Spesialis Backend dengan fokus pada arsitektur API.
-          </h2>
-          <p class="text-slate-400 text-sm leading-relaxed">
-            Berpengalaman membangun sistem server-side yang terstruktur
-            menggunakan Laravel, mengoptimalkan query database, dan
-            mengintegrasikan layanan pihak ketiga.
-          </p>
-        </div>
-
-        <div
-          class="glass p-8 rounded-[2rem] bento-card flex flex-col items-center justify-center"
-        >
-          <div class="grid grid-cols-2 gap-3 text-center w-full">
-            <div
-              class="p-2 bg-white/5 rounded-xl border border-white/10 text-xs font-bold text-emerald-400"
-            >
-              PHP
-            </div>
-            <div
-              class="p-2 bg-white/5 rounded-xl border border-white/10 text-xs font-bold text-emerald-400"
-            >
-              Laravel
-            </div>
-            <div
-              class="p-2 bg-white/5 rounded-xl border border-white/10 text-xs font-bold text-indigo-400"
-            >
-              MySQL
-            </div>
-            <div
-              class="p-2 bg-white/5 rounded-xl border border-white/10 text-xs font-bold text-indigo-400"
-            >
-              REST API
-            </div>
-          </div>
-          <p class="mt-6 font-semibold text-sm tracking-widest uppercase">
-            Tech Stack
-          </p>
-        </div>
-
-        <div
-          class="glass p-8 rounded-[2rem] bento-card flex flex-col justify-between"
-        >
-          <div
-            class="w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center"
-          >
-            <div class="w-3 h-3 bg-emerald-500 rounded-full animate-ping"></div>
-          </div>
-          <div>
-            <p class="text-slate-400 text-xs uppercase tracking-widest">
-              Status Saat Ini
-            </p>
-            <p class="text-lg font-bold text-white leading-tight">
-              Terbuka untuk peluang Magang & Kerja.
-            </p>
-          </div>
-        </div>
-
-        <div
-          class="glass p-8 rounded-[2rem] bento-card flex flex-col justify-center gap-4"
-        >
-          <div class="flex justify-between items-end">
-            <div>
-              <p class="text-3xl font-black text-emerald-400">05+</p>
-              <p class="text-[10px] text-slate-400 uppercase">Proyek Backend</p>
-            </div>
-            <div class="text-right">
-              <p class="text-3xl font-black text-indigo-400">2024</p>
-              <p class="text-[10px] text-slate-400 uppercase">Sejak Aktif</p>
-            </div>
-          </div>
-          <div class="w-full bg-white/5 h-1 rounded-full overflow-hidden">
-            <div class="bg-emerald-500 h-full w-[85%]"></div>
-          </div>
-        </div>
-
-        <div
-          class="md:col-span-3 glass p-8 rounded-[2rem] bento-card flex justify-between items-center group cursor-pointer"
-        >
-          <div>
-            <h3 class="text-xl md:text-2xl font-bold mb-1">
-              Eksplorasi Repositori Kode
-            </h3>
-            <p class="text-slate-400 text-sm">
-              Lihat implementasi Laravel dan struktur API saya di GitHub.
-            </p>
-          </div>
           <a
-            href="https://github.com/rifqyfakhryzain"
-            target="_blank"
-            class="w-14 h-14 bg-white text-black rounded-full flex items-center justify-center group-hover:rotate-45 transition-all shadow-xl shadow-white/10"
+            href="mailto:rifqyfz678@gmail.com"
+            class="group flex items-center gap-2 px-8 py-4 rounded-full font-bold card-border hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
           >
+            <span>Let's Talk</span>
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
+              class="w-4 h-4 transition-transform group-hover:translate-x-1"
               fill="none"
               stroke="currentColor"
-              stroke-width="3"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              viewBox="0 0 24 24"
             >
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              ></path>
             </svg>
           </a>
         </div>
 
         <div
-          class="glass p-8 rounded-[2rem] bento-card flex items-center justify-center"
+          class="mt-16 pt-8 border-t border-zinc-100 dark:border-zinc-900 flex flex-wrap gap-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-500"
         >
-          <span class="text-slate-500 font-mono text-xs"
-            >Postman / Git / MySQL Workbench</span
+          <span class="font-mono text-xs tracking-widest uppercase">PHP</span>
+          <span class="font-mono text-xs tracking-widest uppercase"
+            >Node Js</span
           >
+          <span class="font-mono text-xs tracking-widest uppercase"
+            >Laravel</span
+          >
+          <span class="font-mono text-xs tracking-widest uppercase"
+            >PostgreSQL</span
+          >
+          <span class="font-mono text-xs tracking-widest uppercase">Git</span>
+          <span class="font-mono text-xs tracking-widest uppercase">MySQL</span>
         </div>
       </div>
     </section>
 
+    <section id="about" class="py-20 px-6">
+      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div
+          class="md:col-span-2 p-10 rounded-[2.5rem] card-border card-bg relative overflow-hidden group"
+        >
+          <div
+            class="absolute -right-10 -bottom-10 font-mono text-[150px] opacity-[0.02] dark:opacity-[0.05] pointer-events-none select-none"
+          >
+            CODE
+          </div>
 
+          <h2 class="text-3xl font-bold mb-6 uppercase tracking-tighter">
+            Technical Arsenal
+          </h2>
+          <p class="text-muted text-lg leading-relaxed mb-8">
+            Spesialisasi dalam membangun fondasi server yang
+            <span class="text-main font-semibold">robust</span> dan
+            <span class="text-main font-semibold">scalable</span>. Saya
+            menjembatani logika bisnis dengan arsitektur kode yang bersih.
+          </p>
 
-    <footer class="py-10 border-t border-white/5 text-center">
-      <p class="text-slate-500 text-xs tracking-widest uppercase mb-2">
-        &copy; 2026 Rifqy Fakhry Zain
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div>
+              <h3
+                class="font-mono text-xs uppercase tracking-widest text-zinc-400 mb-4 font-bold"
+              >
+                Backend Ecosystem
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1.5 bg-white dark:bg-zinc-800 rounded-lg text-[11px] font-mono card-border shadow-sm"
+                  >AdonisJS</span
+                >
+                <span
+                  class="px-3 py-1.5 bg-white dark:bg-zinc-800 rounded-lg text-[11px] font-mono card-border shadow-sm"
+                  >Laravel</span
+                >
+                <span
+                  class="px-3 py-1.5 bg-white dark:bg-zinc-800 rounded-lg text-[11px] font-mono card-border shadow-sm"
+                  >Node Js</span
+                >
+                <span
+                  class="px-3 py-1.5 bg-white dark:bg-zinc-800 rounded-lg text-[11px] font-mono card-border shadow-sm"
+                  >RESTful API</span
+                >
+              </div>
+            </div>
+
+            <div>
+              <h3
+                class="font-mono text-xs uppercase tracking-widest text-zinc-400 mb-4 font-bold"
+              >
+                Tools & Styling
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1.5 bg-white dark:bg-zinc-800 rounded-lg text-[11px] font-mono card-border shadow-sm"
+                  >Tailwind CSS</span
+                >
+                <span
+                  class="px-3 py-1.5 bg-white dark:bg-zinc-800 rounded-lg text-[11px] font-mono card-border shadow-sm"
+                  >Git / GitHub</span
+                >
+                <span
+                  class="px-3 py-1.5 bg-white dark:bg-zinc-800 rounded-lg text-[11px] font-mono card-border shadow-sm"
+                  >HTML/CSS</span
+                >
+                <span
+                  class="px-3 py-1.5 bg-white dark:bg-zinc-800 rounded-lg text-[11px] font-mono card-border shadow-sm"
+                  >PostgreSQL</span
+                >
+                <span
+                  class="px-3 py-1.5 bg-white dark:bg-zinc-800 rounded-lg text-[11px] font-mono card-border shadow-sm"
+                  >MySQL</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="p-10 rounded-[2.5rem] card-border flex flex-col justify-between items-center text-center group hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-500"
+        >
+          <div class="text-sm font-bold uppercase tracking-[0.2em] mb-4">
+            Focus Driven
+          </div>
+          <div
+            class="text-7xl font-black italic underline decoration-1 underline-offset-8 transition-transform group-hover:scale-110"
+          >
+            99%
+          </div>
+          <div
+            class="text-[10px] font-mono uppercase tracking-widest mt-4 opacity-60"
+          >
+            API Uptime & Reliability
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="work"
+      class="py-24 px-6 border-t border-zinc-100 dark:border-zinc-900"
+    >
+      <div class="max-w-6xl mx-auto">
+        <div class="mb-16">
+          <h2
+            class="text-5xl md:text-7xl font-extrabold tracking-tighter uppercase"
+          >
+            Selected<br />Works
+          </h2>
+          <div class="mt-4 flex items-center gap-4">
+            <span
+              class="font-mono text-xs uppercase tracking-[0.3em] text-muted"
+              >Complete Archive</span
+            >
+            <div class="h-[1px] w-20 bg-zinc-200 dark:bg-zinc-800"></div>
+            <span class="font-mono text-xs text-zinc-400">10 ITEMS</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            class="group relative flex flex-col justify-between p-8 rounded-[2rem] card-border card-bg hover:bg-black dark:hover:bg-white transition-all duration-500 h-[480px]"
+          >
+            <div>
+              <div class="flex justify-between items-start mb-6">
+                <span
+                  class="font-mono text-xs text-zinc-400 group-hover:text-zinc-500 transition-colors"
+                  >/01</span
+                >
+                <span
+                  class="px-3 py-1 rounded-full border border-zinc-200 dark:border-zinc-800 text-[10px] font-mono group-hover:border-zinc-700 dark:group-hover:border-zinc-300 group-hover:text-white dark:group-hover:text-black"
+                  >LARAVEL</span
+                >
+              </div>
+
+              <div
+                class="aspect-video rounded-xl overflow-hidden mb-6 card-border"
+              >
+                <img
+                  src="path/to/your/ecommerce-image.jpg"
+                  alt="E-Commerce Engine Screenshot"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+
+              <h3
+                class="text-2xl font-bold uppercase leading-none group-hover:text-white dark:group-hover:text-black transition-colors"
+              >
+                E-Commerce<br />Engine
+              </h3>
+              <p
+                class="mt-4 text-sm text-muted group-hover:text-zinc-400 transition-colors"
+              >
+                Sistem backend dengan Redis caching dan integrasi Midtrans.
+              </p>
+            </div>
+            <a
+              href="#"
+              class="font-mono text-[10px] uppercase tracking-widest group-hover:text-white dark:group-hover:text-black flex items-center gap-2"
+            >
+              View Detail
+              <span class="group-hover:translate-x-2 transition-transform"
+                >→</span
+              >
+            </a>
+          </div>
+
+          <div
+            class="group relative flex flex-col justify-between p-8 rounded-[2rem] card-border card-bg hover:bg-black dark:hover:bg-white transition-all duration-500 h-[480px]"
+          >
+            <div>
+              <div class="flex justify-between items-start mb-6">
+                <span
+                  class="font-mono text-xs text-zinc-400 group-hover:text-zinc-500 transition-colors"
+                  >/02</span
+                >
+                <span
+                  class="px-3 py-1 rounded-full border border-zinc-200 dark:border-zinc-800 text-[10px] font-mono group-hover:border-zinc-700 dark:group-hover:border-zinc-300 group-hover:text-white dark:group-hover:text-black"
+                  >ADONISJS</span
+                >
+              </div>
+
+              <div
+                class="aspect-video rounded-xl overflow-hidden mb-6 card-border"
+              >
+                <img
+                  src="path/to/your/chat-app-image.jpg"
+                  alt="Real-time Chat App Screenshot"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+
+              <h3
+                class="text-2xl font-bold uppercase leading-none group-hover:text-white dark:group-hover:text-black transition-colors"
+              >
+                Real-time<br />Chat App
+              </h3>
+              <p
+                class="mt-4 text-sm text-muted group-hover:text-zinc-400 transition-colors"
+              >
+                Aplikasi chat menggunakan WebSockets dan PostgreSQL.
+              </p>
+            </div>
+            <a
+              href="#"
+              class="font-mono text-[10px] uppercase tracking-widest group-hover:text-white dark:group-hover:text-black flex items-center gap-2"
+            >
+              View Detail
+              <span class="group-hover:translate-x-2 transition-transform"
+                >→</span
+              >
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-20 border-t border-black dark:border-white text-center">
+      <p class="font-mono text-[10px] text-muted tracking-widest uppercase">
+        &copy; 2026 Crafted by Rifqy Fakhry Zain
       </p>
     </footer>
 
     <script>
-      window.addEventListener("scroll", function () {
-        const nav = document.querySelector("nav div");
-        if (window.scrollY > 50) {
-          nav.classList.add("bg-black/60");
+      const themeToggleDarkIcon = document.getElementById(
+        "theme-toggle-dark-icon",
+      );
+      const themeToggleLightIcon = document.getElementById(
+        "theme-toggle-light-icon",
+      );
+      const themeToggleBtn = document.getElementById("theme-toggle");
+
+      // Fungsi Sinkronisasi Icon
+      function updateIcons() {
+        if (document.documentElement.classList.contains("dark")) {
+          themeToggleLightIcon.classList.remove("hidden");
+          themeToggleDarkIcon.classList.add("hidden");
         } else {
-          nav.classList.remove("bg-black/60");
+          themeToggleLightIcon.classList.add("hidden");
+          themeToggleDarkIcon.classList.remove("hidden");
         }
+      }
+
+      updateIcons(); // Jalankan saat load
+
+      themeToggleBtn.addEventListener("click", function () {
+        // Toggle Class Dark
+        document.documentElement.classList.toggle("dark");
+
+        // Simpan Preference
+        if (document.documentElement.classList.contains("dark")) {
+          localStorage.setItem("theme", "dark");
+        } else {
+          localStorage.setItem("theme", "light");
+        }
+
+        updateIcons();
       });
 
-      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
       const mobileMenu = document.getElementById("mobile-menu");
 
-      menuBtn.addEventListener("click", () => {
-        // Toggle class untuk animasi
-        mobileMenu.classList.toggle("opacity-0");
-        mobileMenu.classList.toggle("pointer-events-none");
-        mobileMenu.classList.toggle("-translate-y-5");
-        mobileMenu.classList.toggle("translate-y-0");
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.toggle("flex");
       });
 
-      // Tutup menu otomatis saat link diklik
-      document.querySelectorAll("#mobile-menu a").forEach((link) => {
+      // Menutup menu saat link diklik
+      const mobileLinks = mobileMenu.querySelectorAll("a");
+      mobileLinks.forEach((link) => {
         link.addEventListener("click", () => {
-          mobileMenu.classList.add(
-            "opacity-0",
-            "pointer-events-none",
-            "-translate-y-5",
-          );
-          mobileMenu.classList.remove("translate-y-0");
+          mobileMenu.classList.add("hidden");
+          mobileMenu.classList.remove("flex");
         });
       });
     </script>
