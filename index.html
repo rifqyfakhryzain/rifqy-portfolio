@@ -92,6 +92,7 @@
         <div class="flex items-center gap-2">
           <button
             id="theme-toggle"
+            aria-label="Ubah tema warna"
             class="p-2 rounded-xl border border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
           >
             <svg
@@ -118,6 +119,7 @@
 
           <button
             id="mobile-menu-btn"
+            aria-label="Buka menu navigasi"
             class="md:hidden p-2 rounded-xl border border-black dark:border-white"
           >
             <svg
@@ -171,505 +173,519 @@
       </div>
     </nav>
 
-    <section id="home" class="pt-48 pb-20 px-6">
-      <div class="max-w-5xl mx-auto">
-        <div class="flex items-center gap-3 mb-6">
-          <div class="relative flex h-3 w-3">
+    <main>
+      <section id="home" class="pt-48 pb-20 px-6">
+        <div class="max-w-5xl mx-auto">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="relative flex h-3 w-3">
+              <span
+                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"
+              ></span>
+              <span
+                class="relative inline-flex rounded-full h-3 w-3 bg-green-500"
+              ></span>
+            </div>
             <span
-              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"
-            ></span>
-            <span
-              class="relative inline-flex rounded-full h-3 w-3 bg-green-500"
-            ></span>
-          </div>
-          <span
-            class="font-mono text-[10px] uppercase tracking-[0.3em] text-muted"
-          >
-            Available for new architecture
-          </span>
-        </div>
-
-        <h1
-          class="text-6xl md:text-8xl font-extrabold tracking-tighter leading-[0.9] mb-8"
-        >
-          Building Digital <br />
-          <span
-            class="bg-gradient-to-r from-zinc-400 via-zinc-500 to-zinc-800 dark:from-zinc-300 dark:via-zinc-500 dark:to-zinc-700 bg-clip-text text-transparent"
-          >
-            Infrastructure.
-          </span>
-        </h1>
-
-        <p
-          class="text-xl md:text-2xl text-muted max-w-3xl leading-relaxed mb-10"
-        >
-          Saya <span class="text-main font-semibold">Rifqy Fakhry Zain</span>,
-          arsitek di balik layar yang mengubah logika kompleks menjadi sistem
-          backend yang <span class="italic text-main">seamless</span>. Spesialis
-          dalam orkestrasi
-          <span class="underline decoration-zinc-400 underline-offset-4"
-            >Laravel</span
-          >
-          dan optimasi performa database.
-        </p>
-
-        <div class="flex flex-wrap gap-5 items-center">
-          <a
-            href="#work"
-            class="group flex items-center gap-2 px-8 py-4 rounded-full font-bold card-border hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
-          >
-            <span>View Projects</span>
-          </a>
-          <a
-            href="mailto:rifqyfz678@gmail.com"
-            class="group flex items-center gap-2 px-8 py-4 rounded-full font-bold card-border hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
-          >
-            <span>Let's Talk</span>
-            <svg
-              class="w-4 h-4 transition-transform group-hover:translate-x-1"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+              class="font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-600 dark:text-zinc-400"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              ></path>
-            </svg>
-          </a>
-        </div>
-
-        <div
-          class="mt-16 pt-8 border-t border-zinc-100 dark:border-zinc-900 flex flex-wrap gap-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-500"
-        >
-          <span class="font-mono text-xs tracking-widest uppercase">PHP</span>
-          <span class="font-mono text-xs tracking-widest uppercase"
-            >Node Js</span
-          >
-          <span class="font-mono text-xs tracking-widest uppercase"
-            >Laravel</span
-          >
-          <span class="font-mono text-xs tracking-widest uppercase"
-            >PostgreSQL</span
-          >
-          <span class="font-mono text-xs tracking-widest uppercase">Git</span>
-          <span class="font-mono text-xs tracking-widest uppercase">MySQL</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="py-20 px-6">
-      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div
-          class="md:col-span-2 p-10 rounded-[2.5rem] card-border card-bg relative overflow-hidden group"
-        >
-          <div
-            class="absolute -right-10 -bottom-10 font-mono text-[150px] opacity-[0.02] dark:opacity-[0.05] pointer-events-none select-none"
-          >
-            CODE
+              Available for new architecture
+            </span>
           </div>
 
-          <h2 class="text-3xl font-bold mb-6 uppercase tracking-tighter">
-            Technical Arsenal
-          </h2>
-          <p class="text-muted text-lg leading-relaxed mb-8">
-            Spesialisasi dalam membangun fondasi server yang
-            <span class="text-main font-semibold">robust</span> dan
-            <span class="text-main font-semibold">scalable</span>. Saya
-            menjembatani logika bisnis dengan arsitektur kode yang bersih.
+          <h1
+            class="text-6xl md:text-8xl font-extrabold tracking-tighter leading-[0.9] mb-8"
+          >
+            Building Digital <br />
+            <span
+              class="bg-gradient-to-r from-zinc-500 via-zinc-600 to-zinc-800 dark:from-zinc-300 dark:via-zinc-400 dark:to-zinc-600 bg-clip-text text-transparent"
+            >
+              Infrastructure.
+            </span>
+          </h1>
+
+          <p
+            class="text-xl md:text-2xl text-zinc-700 dark:text-zinc-300 max-w-3xl leading-relaxed mb-10"
+          >
+            Saya <span class="text-main font-semibold">Rifqy Fakhry Zain</span>,
+            arsitek di balik layar yang mengubah logika kompleks menjadi sistem
+            backend yang <span class="italic text-main">seamless</span>.
+            Spesialis dalam orkestrasi
+            <span class="underline decoration-zinc-400 underline-offset-4"
+              >Laravel</span
+            >
+            dan optimasi performa database.
           </p>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <div>
-              <h3
-                class="font-mono text-xs uppercase tracking-widest text-zinc-400 mb-4 font-bold"
+          <div class="flex flex-wrap gap-5 items-center">
+            <a
+              href="#work"
+              class="group flex items-center gap-2 px-8 py-4 rounded-full font-bold card-border hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
+            >
+              <span>View Projects</span>
+            </a>
+            <a
+              href="mailto:rifqyfz678@gmail.com"
+              class="group flex items-center gap-2 px-8 py-4 rounded-full font-bold card-border hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
+            >
+              <span>Let's Talk</span>
+              <svg
+                class="w-4 h-4 transition-transform group-hover:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
               >
-                Backend Ecosystem
-              </h3>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="px-3 py-1.5 bg-white dark:bg-zinc-800 rounded-lg text-[11px] font-mono card-border shadow-sm"
-                  >AdonisJS</span
-                >
-                <span
-                  class="px-3 py-1.5 bg-white dark:bg-zinc-800 rounded-lg text-[11px] font-mono card-border shadow-sm"
-                  >Laravel</span
-                >
-                <span
-                  class="px-3 py-1.5 bg-white dark:bg-zinc-800 rounded-lg text-[11px] font-mono card-border shadow-sm"
-                  >Node Js</span
-                >
-                <span
-                  class="px-3 py-1.5 bg-white dark:bg-zinc-800 rounded-lg text-[11px] font-mono card-border shadow-sm"
-                  >RESTful API</span
-                >
-              </div>
-            </div>
-
-            <div>
-              <h3
-                class="font-mono text-xs uppercase tracking-widest text-zinc-400 mb-4 font-bold"
-              >
-                Tools & Styling
-              </h3>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="px-3 py-1.5 bg-white dark:bg-zinc-800 rounded-lg text-[11px] font-mono card-border shadow-sm"
-                  >Tailwind CSS</span
-                >
-                <span
-                  class="px-3 py-1.5 bg-white dark:bg-zinc-800 rounded-lg text-[11px] font-mono card-border shadow-sm"
-                  >Git / GitHub</span
-                >
-                <span
-                  class="px-3 py-1.5 bg-white dark:bg-zinc-800 rounded-lg text-[11px] font-mono card-border shadow-sm"
-                  >HTML/CSS</span
-                >
-                <span
-                  class="px-3 py-1.5 bg-white dark:bg-zinc-800 rounded-lg text-[11px] font-mono card-border shadow-sm"
-                  >PostgreSQL</span
-                >
-                <span
-                  class="px-3 py-1.5 bg-white dark:bg-zinc-800 rounded-lg text-[11px] font-mono card-border shadow-sm"
-                  >MySQL</span
-                >
-              </div>
-            </div>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                ></path>
+              </svg>
+            </a>
           </div>
-        </div>
 
-        <div
-          class="p-10 rounded-[2.5rem] card-border flex flex-col justify-between items-center text-center group hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-500"
-        >
-          <div class="text-sm font-bold uppercase tracking-[0.2em] mb-4">
-            Focus Driven
-          </div>
           <div
-            class="text-7xl font-black italic underline decoration-1 underline-offset-8 transition-transform group-hover:scale-110"
+            class="mt-16 pt-8 border-t border-zinc-200 dark:border-zinc-800 flex flex-wrap gap-8 opacity-70 transition-all duration-500"
           >
-            99%
-          </div>
-          <div
-            class="text-[10px] font-mono uppercase tracking-widest mt-4 opacity-60"
-          >
-            API Uptime & Reliability
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section
-      id="work"
-      class="py-24 px-6 border-t border-zinc-100 dark:border-zinc-900"
-    >
-      <div class="max-w-6xl mx-auto">
-        <div class="mb-16">
-          <h2
-            class="text-5xl md:text-7xl font-extrabold tracking-tighter uppercase"
-          >
-            Selected<br />Works
-          </h2>
-          <div class="mt-4 flex items-center gap-4">
             <span
-              class="font-mono text-xs uppercase tracking-[0.3em] text-muted"
-              >Complete Archive</span
+              class="font-mono text-xs tracking-widest uppercase text-zinc-800 dark:text-zinc-200 font-semibold"
+              >PHP</span
             >
-            <div class="h-[1px] w-20 bg-zinc-200 dark:bg-zinc-800"></div>
-            <span class="font-mono text-xs text-zinc-400">10 ITEMS</span>
+            <span
+              class="font-mono text-xs tracking-widest uppercase text-zinc-800 dark:text-zinc-200 font-semibold"
+              >Node Js</span
+            >
+            <span
+              class="font-mono text-xs tracking-widest uppercase text-zinc-800 dark:text-zinc-200 font-semibold"
+              >Laravel</span
+            >
+            <span
+              class="font-mono text-xs tracking-widest uppercase text-zinc-800 dark:text-zinc-200 font-semibold"
+              >PostgreSQL</span
+            >
+            <span
+              class="font-mono text-xs tracking-widest uppercase text-zinc-800 dark:text-zinc-200 font-semibold"
+              >Git</span
+            >
+            <span
+              class="font-mono text-xs tracking-widest uppercase text-zinc-800 dark:text-zinc-200 font-semibold"
+              >MySQL</span
+            >
           </div>
         </div>
+      </section>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section id="about" class="py-20 px-6">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
           <div
-            class="group relative flex flex-col justify-between p-8 rounded-[2rem] card-border card-bg hover:bg-black dark:hover:bg-white transition-all duration-500 h-[480px]"
+            class="md:col-span-2 p-10 rounded-[2.5rem] card-border card-bg relative overflow-hidden group"
           >
-            <div>
-              <div class="flex justify-between items-start mb-6">
-                <span
-                  class="font-mono text-xs text-zinc-400 group-hover:text-zinc-500 transition-colors"
-                  >/01</span
-                >
-                <span
-                  class="px-3 py-1 rounded-full border border-zinc-200 dark:border-zinc-800 text-[10px] font-mono group-hover:border-zinc-700 dark:group-hover:border-zinc-300 group-hover:text-white dark:group-hover:text-black"
-                  >LARAVEL</span
-                >
-              </div>
-
-              <div
-                class="aspect-video rounded-xl overflow-hidden mb-6 card-border"
-              >
-                <img
-                  src="/asset/1.employee-management.webp"
-                  alt="Employee Management"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-
-              <h3
-                class="text-2xl font-bold uppercase leading-none group-hover:text-white dark:group-hover:text-black transition-colors"
-              >
-                Employee Leave<br />Management API
-              </h3>
-              <p
-                class="mt-4 mb-8 text-sm text-muted group-hover:text-zinc-400 transition-colors leading-relaxed"
-              >
-                RESTful API dengan integrasi <strong>Google OAuth</strong> dan
-                <strong>Sanctum</strong>. Mengelola otomatisasi kuota cuti
-                tahunan dengan validasi logic yang ketat dan Role-based Access
-                Control.
-              </p>
-            </div>
-            <a
-              href="https://github.com/rifqyfakhryzain/employee-leave-management-system"
-              class="font-mono text-[10px] uppercase tracking-widest group-hover:text-white dark:group-hover:text-black flex items-center gap-2"
+            <div
+              class="absolute -right-10 -bottom-10 font-mono text-[150px] opacity-[0.02] dark:opacity-[0.05] pointer-events-none select-none"
             >
-              View Detail
-              <span class="group-hover:translate-x-2 transition-transform"
-                >→</span
-              >
-            </a>
-          </div>
-
-          <!-- 2. employee admin management -->
-          <div
-            class="group relative flex flex-col justify-between p-8 rounded-[2rem] card-border card-bg hover:bg-black dark:hover:bg-white transition-all duration-500 h-[480px]"
-          >
-            <div>
-              <div class="flex justify-between items-start mb-6">
-                <span
-                  class="font-mono text-xs text-zinc-400 group-hover:text-zinc-500 transition-colors"
-                  >/02</span
-                >
-                <span
-                  class="px-3 py-1 rounded-full border border-zinc-200 dark:border-zinc-800 text-[10px] font-mono group-hover:border-zinc-700 dark:group-hover:border-zinc-300 group-hover:text-white dark:group-hover:text-black"
-                  >Adonisjs</span
-                >
-              </div>
-
-              <div
-                class="aspect-video rounded-xl overflow-hidden mb-6 card-border"
-              >
-                <img
-                  src="/asset/1.employee-management.webp"
-                  alt="Employee Management"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-
-              <h3
-                class="text-2xl font-bold uppercase leading-none group-hover:text-white dark:group-hover:text-black transition-colors"
-              >
-                Employee Leave<br />Management API
-              </h3>
-              <p
-                class="mt-4 mb-8 text-sm text-muted group-hover:text-zinc-400 transition-colors leading-relaxed"
-              >
-                RESTful API dengan integrasi <strong>Google OAuth</strong> dan
-                <strong>AdonisJS Access Tokens</strong>. Mengelola otomatisasi
-                kuota cuti tahunan dan Role-based Access Control.
-              </p>
+              CODE
             </div>
-            <a
-              href="https://github.com/rifqyfakhryzain/leave-management-api"
-              class="font-mono text-[10px] uppercase tracking-widest group-hover:text-white dark:group-hover:text-black flex items-center gap-2"
+
+            <h2 class="text-3xl font-bold mb-6 uppercase tracking-tighter">
+              Technical Arsenal
+            </h2>
+            <p
+              class="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed mb-8"
             >
-              View Detail
-              <span class="group-hover:translate-x-2 transition-transform"
-                >→</span
-              >
-            </a>
-          </div>
+              Spesialisasi dalam membangun fondasi server yang
+              <span class="text-main font-semibold">robust</span> dan
+              <span class="text-main font-semibold">scalable</span>. Saya
+              menjembatani logika bisnis dengan arsitektur kode yang bersih.
+            </p>
 
-          <!-- 3. Doorprize Admin -->
-          <div
-            class="group relative flex flex-col justify-between p-8 rounded-[2rem] card-border card-bg hover:bg-black dark:hover:bg-white transition-all duration-500 h-[480px]"
-          >
-            <div>
-              <div class="flex justify-between items-start mb-6">
-                <span
-                  class="font-mono text-xs text-zinc-400 group-hover:text-zinc-500 transition-colors"
-                  >/03</span
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <div>
+                <h3
+                  class="font-mono text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-400 mb-4 font-bold"
                 >
-                <span
-                  class="px-3 py-1 rounded-full border border-zinc-200 dark:border-zinc-800 text-[10px] font-mono group-hover:border-zinc-700 dark:group-hover:border-zinc-300 group-hover:text-white dark:group-hover:text-black"
-                  >Laravel</span
-                >
+                  Backend Ecosystem
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-3 py-1.5 bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 font-semibold rounded-lg text-[11px] font-mono card-border shadow-sm"
+                    >AdonisJS</span
+                  >
+                  <span
+                    class="px-3 py-1.5 bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 font-semibold rounded-lg text-[11px] font-mono card-border shadow-sm"
+                    >Laravel</span
+                  >
+                  <span
+                    class="px-3 py-1.5 bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 font-semibold rounded-lg text-[11px] font-mono card-border shadow-sm"
+                    >Node Js</span
+                  >
+                  <span
+                    class="px-3 py-1.5 bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 font-semibold rounded-lg text-[11px] font-mono card-border shadow-sm"
+                    >RESTful API</span
+                  >
+                </div>
               </div>
 
-              <div
-                class="aspect-video rounded-xl overflow-hidden mb-6 card-border"
-              >
-                <img
-                  src="/asset/3.doorprize-admin.webp"
-                  alt="Doorprize Admin"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+              <div>
+                <h3
+                  class="font-mono text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-400 mb-4 font-bold"
+                >
+                  Tools & Styling
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-3 py-1.5 bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 font-semibold rounded-lg text-[11px] font-mono card-border shadow-sm"
+                    >Tailwind CSS</span
+                  >
+                  <span
+                    class="px-3 py-1.5 bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 font-semibold rounded-lg text-[11px] font-mono card-border shadow-sm"
+                    >Git / GitHub</span
+                  >
+                  <span
+                    class="px-3 py-1.5 bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 font-semibold rounded-lg text-[11px] font-mono card-border shadow-sm"
+                    >HTML/CSS</span
+                  >
+                  <span
+                    class="px-3 py-1.5 bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 font-semibold rounded-lg text-[11px] font-mono card-border shadow-sm"
+                    >PostgreSQL</span
+                  >
+                  <span
+                    class="px-3 py-1.5 bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 font-semibold rounded-lg text-[11px] font-mono card-border shadow-sm"
+                    >MySQL</span
+                  >
+                </div>
               </div>
-
-              <h3
-                class="text-2xl font-bold uppercase leading-none group-hover:text-white dark:group-hover:text-black transition-colors"
-              >
-                Admin Doorprize<br />System
-              </h3>
-              <p
-                class="mt-4 mb-8 text-sm text-muted group-hover:text-zinc-400 transition-colors leading-relaxed"
-              >
-                Bertanggung jawab pada pengembangan
-                <strong>Admin Panel</strong> yang aman, manajemen enkripsi data
-                peserta, serta algoritma penentuan pemenang yang adil dan
-                transparan.
-              </p>
             </div>
           </div>
 
-          <!-- 4. Hrd Sintech -->
           <div
-            class="group relative flex flex-col justify-between p-8 rounded-[2rem] card-border card-bg hover:bg-black dark:hover:bg-white transition-all duration-500 h-[480px]"
+            class="p-10 rounded-[2.5rem] card-border flex flex-col justify-between items-center text-center group hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-500"
           >
-            <div>
-              <div class="flex justify-between items-start mb-6">
-                <span
-                  class="font-mono text-xs text-zinc-400 group-hover:text-zinc-500 transition-colors"
-                  >/04</span
-                >
-                <span
-                  class="px-3 py-1 rounded-full border border-zinc-200 dark:border-zinc-800 text-[10px] font-mono group-hover:border-zinc-700 dark:group-hover:border-zinc-300 group-hover:text-white dark:group-hover:text-black"
-                  >Laravel</span
-                >
-              </div>
-
-              <div
-                class="aspect-video rounded-xl overflow-hidden mb-6 card-border"
-              >
-                <img
-                  src="/asset/4.hrd-sintech.webp"
-                  alt="Hrd Sintech"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-
-              <h3
-                class="text-2xl font-bold uppercase leading-none group-hover:text-white dark:group-hover:text-black transition-colors"
-              >
-                HRD Internal<br />System Refactor
-              </h3>
-              <p
-                class="mt-4 mb-8 text-sm text-muted group-hover:text-zinc-400 transition-colors leading-relaxed"
-              >
-                Melakukan modernisasi <strong>legacy code</strong> pada platform
-                HRD internal. Fokus pada optimasi query database , implementasi
-                <strong>Service Pattern</strong> untuk memisahkan logic bisnis
-              </p>
+            <div class="text-sm font-bold uppercase tracking-[0.2em] mb-4">
+              Focus Driven
             </div>
-          </div>
-
-          <!-- 5. Bakerins -->
-          <div
-            class="group relative flex flex-col justify-between p-8 rounded-[2rem] card-border card-bg hover:bg-black dark:hover:bg-white transition-all duration-500 h-[480px]"
-          >
-            <div>
-              <div class="flex justify-between items-start mb-6">
-                <span
-                  class="font-mono text-xs text-zinc-400 group-hover:text-zinc-500 transition-colors"
-                  >/05</span
-                >
-                <span
-                  class="px-3 py-1 rounded-full border border-zinc-200 dark:border-zinc-800 text-[10px] font-mono group-hover:border-zinc-700 dark:group-hover:border-zinc-300 group-hover:text-white dark:group-hover:text-black"
-                  >Laravel</span
-                >
-              </div>
-
-              <div
-                class="aspect-video rounded-xl overflow-hidden mb-6 card-border"
-              >
-                <img
-                  src="/asset/5.bakerins.webp"
-                  alt="Bakerins"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-
-              <h3
-                class="text-2xl font-bold uppercase leading-none group-hover:text-white dark:group-hover:text-black transition-colors"
-              >
-                Bakerins Product<br />Management
-              </h3>
-              <p
-                class="mt-4 mb-8 text-sm text-muted group-hover:text-zinc-400 transition-colors leading-relaxed"
-              >
-                Membangun sistem katalog produk untuk UMKM menggunakan
-                <strong>Filament PHP</strong>serta integrasi dashboard admin
-                yang responsif untuk operasional harian.
-              </p>
-            </div>
-            <a
-              href="https://github.com/rifqyfakhryzain/bakerins-app"
-              class="font-mono text-[10px] uppercase tracking-widest group-hover:text-white dark:group-hover:text-black flex items-center gap-2"
+            <div
+              class="text-7xl font-black italic underline decoration-1 underline-offset-8 transition-transform group-hover:scale-110"
             >
-              View Detail
-              <span class="group-hover:translate-x-2 transition-transform"
-                >→</span
-              >
-            </a>
-          </div>
-
-          <!-- 6. E-Wallet Kita -->
-          <div
-            class="group relative flex flex-col justify-between p-8 rounded-[2rem] card-border card-bg hover:bg-black dark:hover:bg-white transition-all duration-500 h-[480px]"
-          >
-            <div>
-              <div class="flex justify-between items-start mb-6">
-                <span
-                  class="font-mono text-xs text-zinc-400 group-hover:text-zinc-500 transition-colors"
-                  >/06</span
-                >
-                <span
-                  class="px-3 py-1 rounded-full border border-zinc-200 dark:border-zinc-800 text-[10px] font-mono group-hover:border-zinc-700 dark:group-hover:border-zinc-300 group-hover:text-white dark:group-hover:text-black"
-                  >Laravel</span
-                >
-              </div>
-
-              <div
-                class="aspect-video rounded-xl overflow-hidden mb-6 card-border"
-              >
-                <img
-                  src="/asset/6.wallet-kita.webp"
-                  alt="E-Wallet Kita"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-
-              <h3
-                class="text-2xl font-bold uppercase leading-none group-hover:text-white dark:group-hover:text-black transition-colors"
-              >
-                E-Wallet Kita<br />Digital Platform
-              </h3>
-              <p
-                class="mt-4 mb-8 text-sm text-muted group-hover:text-zinc-400 transition-colors leading-relaxed"
-              >
-                Pengembangan sistem dompet digital personal yang fokus pada
-                integritas data transaksi. menjamin keamanan mutasi saldo, dan
-                pencatatan arus kas secara real-time.
-              </p>
+              99%
             </div>
-            <a
-              href="https://github.com/rifqyfakhryzain/dompet-digital"
-              class="font-mono text-[10px] uppercase tracking-widest group-hover:text-white dark:group-hover:text-black flex items-center gap-2"
+            <div
+              class="text-[10px] font-mono uppercase tracking-widest mt-4 opacity-75"
             >
-              View Detail
-              <span class="group-hover:translate-x-2 transition-transform"
-                >→</span
-              >
-            </a>
+              API Uptime & Reliability
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section
+        id="work"
+        class="py-24 px-6 border-t border-zinc-200 dark:border-zinc-800"
+      >
+        <div class="max-w-6xl mx-auto">
+          <div class="mb-16">
+            <h2
+              class="text-5xl md:text-7xl font-extrabold tracking-tighter uppercase"
+            >
+              Selected<br />Works
+            </h2>
+            <div class="mt-4 flex items-center gap-4">
+              <span
+                class="font-mono text-xs uppercase tracking-[0.3em] text-zinc-600 dark:text-zinc-400"
+                >Complete Archive</span
+              >
+              <div class="h-[1px] w-20 bg-zinc-200 dark:bg-zinc-800"></div>
+              <span class="font-mono text-xs text-zinc-500">10 ITEMS</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div
+              class="group relative flex flex-col justify-between p-8 rounded-[2rem] card-border card-bg hover:bg-black dark:hover:bg-white transition-all duration-500 h-[480px]"
+            >
+              <div>
+                <div class="flex justify-between items-start mb-6">
+                  <span
+                    class="font-mono text-xs text-zinc-500 group-hover:text-zinc-400 transition-colors"
+                    >/01</span
+                  >
+                  <span
+                    class="px-3 py-1 rounded-full border border-zinc-300 dark:border-zinc-700 text-[10px] font-mono group-hover:border-zinc-700 dark:group-hover:border-zinc-300 group-hover:text-white dark:group-hover:text-black"
+                    >LARAVEL</span
+                  >
+                </div>
+
+                <div
+                  class="aspect-video rounded-xl overflow-hidden mb-6 card-border"
+                >
+                  <img
+                    src="/asset/1.employee-management.webp"
+                    alt="Employee Management Dashboard Interface"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+
+                <h3
+                  class="text-2xl font-bold uppercase leading-none group-hover:text-white dark:group-hover:text-black transition-colors"
+                >
+                  Employee Leave<br />Management API
+                </h3>
+                <p
+                  class="mt-4 mb-8 text-sm text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-300 transition-colors leading-relaxed"
+                >
+                  RESTful API dengan integrasi <strong>Google OAuth</strong> dan
+                  <strong>Sanctum</strong>. Mengelola otomatisasi kuota cuti
+                  tahunan dengan validasi logic yang ketat dan Role-based Access
+                  Control.
+                </p>
+              </div>
+              <a
+                href="https://github.com/rifqyfakhryzain/employee-leave-management-system"
+                class="font-mono text-[10px] uppercase tracking-widest group-hover:text-white dark:group-hover:text-black flex items-center gap-2"
+              >
+                View Detail
+                <span class="group-hover:translate-x-2 transition-transform"
+                  >→</span
+                >
+              </a>
+            </div>
+
+            <div
+              class="group relative flex flex-col justify-between p-8 rounded-[2rem] card-border card-bg hover:bg-black dark:hover:bg-white transition-all duration-500 h-[480px]"
+            >
+              <div>
+                <div class="flex justify-between items-start mb-6">
+                  <span
+                    class="font-mono text-xs text-zinc-500 group-hover:text-zinc-400 transition-colors"
+                    >/02</span
+                  >
+                  <span
+                    class="px-3 py-1 rounded-full border border-zinc-300 dark:border-zinc-700 text-[10px] font-mono group-hover:border-zinc-700 dark:group-hover:border-zinc-300 group-hover:text-white dark:group-hover:text-black"
+                    >Adonisjs</span
+                  >
+                </div>
+
+                <div
+                  class="aspect-video rounded-xl overflow-hidden mb-6 card-border"
+                >
+                  <img
+                    src="/asset/1.employee-management.webp"
+                    alt="Employee Leave Management Backend Application Flow"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+
+                <h3
+                  class="text-2xl font-bold uppercase leading-none group-hover:text-white dark:group-hover:text-black transition-colors"
+                >
+                  Employee Leave<br />Management API
+                </h3>
+                <p
+                  class="mt-4 mb-8 text-sm text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-300 transition-colors leading-relaxed"
+                >
+                  RESTful API dengan integrasi <strong>Google OAuth</strong> dan
+                  <strong>AdonisJS Access Tokens</strong>. Mengelola otomatisasi
+                  kuota cuti tahunan dan Role-based Access Control.
+                </p>
+              </div>
+              <a
+                href="https://github.com/rifqyfakhryzain/leave-management-api"
+                class="font-mono text-[10px] uppercase tracking-widest group-hover:text-white dark:group-hover:text-black flex items-center gap-2"
+              >
+                View Detail
+                <span class="group-hover:translate-x-2 transition-transform"
+                  >→</span
+                >
+              </a>
+            </div>
+
+            <div
+              class="group relative flex flex-col justify-between p-8 rounded-[2rem] card-border card-bg hover:bg-black dark:hover:bg-white transition-all duration-500 h-[480px]"
+            >
+              <div>
+                <div class="flex justify-between items-start mb-6">
+                  <span
+                    class="font-mono text-xs text-zinc-500 group-hover:text-zinc-400 transition-colors"
+                    >/03</span
+                  >
+                  <span
+                    class="px-3 py-1 rounded-full border border-zinc-300 dark:border-zinc-700 text-[10px] font-mono group-hover:border-zinc-700 dark:group-hover:border-zinc-300 group-hover:text-white dark:group-hover:text-black"
+                    >Laravel</span
+                  >
+                </div>
+
+                <div
+                  class="aspect-video rounded-xl overflow-hidden mb-6 card-border"
+                >
+                  <img
+                    src="/asset/3.doorprize-admin.webp"
+                    alt="Doorprize Winner Distribution Admin System"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+
+                <h3
+                  class="text-2xl font-bold uppercase leading-none group-hover:text-white dark:group-hover:text-black transition-colors"
+                >
+                  Admin Doorprize<br />System
+                </h3>
+                <p
+                  class="mt-4 mb-8 text-sm text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-300 transition-colors leading-relaxed"
+                >
+                  Bertanggung jawab pada pengembangan
+                  <strong>Admin Panel</strong> yang aman, manajemen enkripsi
+                  data peserta, serta algoritma penentuan pemenang yang adil dan
+                  transparan.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="group relative flex flex-col justify-between p-8 rounded-[2rem] card-border card-bg hover:bg-black dark:hover:bg-white transition-all duration-500 h-[480px]"
+            >
+              <div>
+                <div class="flex justify-between items-start mb-6">
+                  <span
+                    class="font-mono text-xs text-zinc-500 group-hover:text-zinc-400 transition-colors"
+                    >/04</span
+                  >
+                  <span
+                    class="px-3 py-1 rounded-full border border-zinc-300 dark:border-zinc-700 text-[10px] font-mono group-hover:border-zinc-700 dark:group-hover:border-zinc-300 group-hover:text-white dark:group-hover:text-black"
+                    >Laravel</span
+                  >
+                </div>
+
+                <div
+                  class="aspect-video rounded-xl overflow-hidden mb-6 card-border"
+                >
+                  <img
+                    src="/asset/4.hrd-sintech.webp"
+                    alt="HRD Internal Core System Refactoring Panel"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+
+                <h3
+                  class="text-2xl font-bold uppercase leading-none group-hover:text-white dark:group-hover:text-black transition-colors"
+                >
+                  HRD Internal<br />System Refactor
+                </h3>
+                <p
+                  class="mt-4 mb-8 text-sm text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-300 transition-colors leading-relaxed"
+                >
+                  Melakukan modernisasi <strong>legacy code</strong> pada
+                  platform HRD internal. Fokus pada optimasi query database,
+                  implementasi <strong>Service Pattern</strong> untuk memisahkan
+                  logic bisnis.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="group relative flex flex-col justify-between p-8 rounded-[2rem] card-border card-bg hover:bg-black dark:hover:bg-white transition-all duration-500 h-[480px]"
+            >
+              <div>
+                <div class="flex justify-between items-start mb-6">
+                  <span
+                    class="font-mono text-xs text-zinc-500 group-hover:text-zinc-400 transition-colors"
+                    >/05</span
+                  >
+                  <span
+                    class="px-3 py-1 rounded-full border border-zinc-300 dark:border-zinc-700 text-[10px] font-mono group-hover:border-zinc-700 dark:group-hover:border-zinc-300 group-hover:text-white dark:group-hover:text-black"
+                    >Laravel</span
+                  >
+                </div>
+
+                <div
+                  class="aspect-video rounded-xl overflow-hidden mb-6 card-border"
+                >
+                  <img
+                    src="/asset/5.bakerins.webp"
+                    alt="Bakerins E-Commerce UMKM Product Management"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+
+                <h3
+                  class="text-2xl font-bold uppercase leading-none group-hover:text-white dark:group-hover:text-black transition-colors"
+                >
+                  Bakerins Product<br />Management
+                </h3>
+                <p
+                  class="mt-4 mb-8 text-sm text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-300 transition-colors leading-relaxed"
+                >
+                  Membangun sistem katalog produk untuk UMKM menggunakan
+                  <strong>Filament PHP</strong> serta integrasi dashboard admin
+                  yang responsif untuk operasional harian.
+                </p>
+              </div>
+              <a
+                href="https://github.com/rifqyfakhryzain/bakerins-app"
+                class="font-mono text-[10px] uppercase tracking-widest group-hover:text-white dark:group-hover:text-black flex items-center gap-2"
+              >
+                View Detail
+                <span class="group-hover:translate-x-2 transition-transform"
+                  >→</span
+                >
+              </a>
+            </div>
+
+            <div
+              class="group relative flex flex-col justify-between p-8 rounded-[2rem] card-border card-bg hover:bg-black dark:hover:bg-white transition-all duration-500 h-[480px]"
+            >
+              <div>
+                <div class="flex justify-between items-start mb-6">
+                  <span
+                    class="font-mono text-xs text-zinc-500 group-hover:text-zinc-400 transition-colors"
+                    >/06</span
+                  >
+                  <span
+                    class="px-3 py-1 rounded-full border border-zinc-300 dark:border-zinc-700 text-[10px] font-mono group-hover:border-zinc-700 dark:group-hover:border-zinc-300 group-hover:text-white dark:group-hover:text-black"
+                    >Laravel</span
+                  >
+                </div>
+
+                <div
+                  class="aspect-video rounded-xl overflow-hidden mb-6 card-border"
+                >
+                  <img
+                    src="/asset/6.wallet-kita.webp"
+                    alt="E-Wallet Kita Transaction History Interface"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+
+                <h3
+                  class="text-2xl font-bold uppercase leading-none group-hover:text-white dark:group-hover:text-black transition-colors"
+                >
+                  E-Wallet Kita<br />Digital Platform
+                </h3>
+                <p
+                  class="mt-4 mb-8 text-sm text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-300 transition-colors leading-relaxed"
+                >
+                  Pengembangan sistem dompet digital personal yang fokus pada
+                  integritas data transaksi. menjamin keamanan mutasi saldo, dan
+                  pencatatan arus kas secara real-time.
+                </p>
+              </div>
+              <a
+                href="https://github.com/rifqyfakhryzain/dompet-digital"
+                class="font-mono text-[10px] uppercase tracking-widest group-hover:text-white dark:group-hover:text-black flex items-center gap-2"
+              >
+                View Detail
+                <span class="group-hover:translate-x-2 transition-transform"
+                  >→</span
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer class="py-20 border-t border-black dark:border-white text-center">
-      <p class="font-mono text-[10px] text-muted tracking-widest uppercase">
+      <p
+        class="font-mono text-[10px] text-zinc-600 dark:text-zinc-400 tracking-widest uppercase"
+      >
         &copy; 2026 Crafted by Rifqy Fakhry Zain
       </p>
     </footer>
